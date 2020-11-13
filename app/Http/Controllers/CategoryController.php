@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Product;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
@@ -72,5 +74,24 @@ class CategoryController extends Controller
     {
        Category::find($id)->delete();
        return redirect('/all_category')->with('success', 'Category deleted succesfully');
+    }
+
+    // product by category
+    public function product_by_category($id)
+    {
+        $product_by_category = Product::where('category_id', $id)->get();
+        return view('backend.pages.category.product_by_category', compact('product_by_category'));
+    }
+
+    // product_by_manufacture
+    public function product_by_manufacture($id)
+    {
+        $product_by_manufacture = DB::table('manufactures')
+                                ->join('products', 'products.brand_id', '=', 'manufactures.id')
+                                ->select('products.*', 'manufactures.name as brand_name')
+                                ->where('manufactures.id', $id)
+                                ->get();
+
+        return view('frontend.pages.product_by_manufacture', compact('product_by_manufacture'));
     }
 }

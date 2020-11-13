@@ -13,6 +13,12 @@
     <link href="{{url('/')}}/frontend/css/animate.css" rel="stylesheet">
 	<link href="{{url('/')}}/frontend/css/main.css" rel="stylesheet">
 	<link href="{{url('/')}}/frontend/css/responsive.css" rel="stylesheet">
+	<link href="{{url('/')}}/frontend/css/responsive.css" rel="stylesheet">
+	<link href="{{url('/')}}/css/animated.css" rel="stylesheet">
+	<link href="{{url('/')}}/css/owl.carousel.min.css" rel="stylesheet">
+	<link href="{{url('/')}}/css/owl.theme.default.min.css" rel="stylesheet">
+	<link href="{{url('/')}}/css/style.css" rel="stylesheet">
+	<link href="{{url('/')}}/css/payment.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -22,6 +28,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{url('/')}}/frontend/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{url('/')}}/frontend/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="{{url('/')}}/frontend/images/ico/apple-touch-icon-57-precomposed.png">
+
 </head><!--/head-->
 
 <body>
@@ -29,9 +36,7 @@
     @include('frontend.partials.header')
 	{{-- header ./ --}}
 
-    {{-- slider --}}
-    @include('frontend.partials.slider')
-	{{-- slider ./ --}}
+
 
     {{-- main section --}}
     @yield('content')
@@ -49,5 +54,8 @@
 	<script src="{{url('/')}}/frontend/js/price-range.js"></script>
     <script src="{{url('/')}}/frontend/js/jquery.prettyPhoto.js"></script>
     <script src="{{url('/')}}/frontend/js/main.js"></script>
+    <script src="{{url('/')}}/js/owl.carousel.min.js"></script>
+    <script src="{{url('/')}}/js/wow.min.js"></script>
+    <script src="{{url('/')}}/js/script.js"></script>
 </body>
 </html>

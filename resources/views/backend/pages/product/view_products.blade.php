@@ -64,7 +64,7 @@
 
                                     <a href="{{url('/edit_product')}}/{{$item->id}}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
                                     <a href="{{url('/delete_product')}}/{{$item->id}}"   id="delete_product" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
-                                </td>
+                                    </td>
 
                                 </tr>
                                 @endforeach

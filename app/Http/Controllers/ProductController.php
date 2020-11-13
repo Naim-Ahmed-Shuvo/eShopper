@@ -112,6 +112,12 @@ class ProductController extends Controller
         Product::find($id)->delete();
         return redirect('/view_products')->with('success', 'Product deleted successfully');
     }
+
+    public function view_products_details($id)
+    {
+       $product_info = Product::find($id);
+       return view('frontend.pages.product_details', compact('product_info'));
+    }
 }
 
 

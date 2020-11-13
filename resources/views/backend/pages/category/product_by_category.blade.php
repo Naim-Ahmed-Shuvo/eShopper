@@ -1,9 +1,6 @@
 @extends('frontend.master')
 
 @section('content')
-{{-- slider --}}
-@include('frontend.partials.slider')
-{{-- slider ./ --}}
 <section>
     <div class="container">
         <div class="row">
@@ -32,7 +29,7 @@
                                  $brands = DB::table('manufactures')->get();
                                 @endphp
                                   @foreach ($brands as $item)
-                                  <li><a href="{{url('/product_by_manufacture')}}/{{$item->id}}"> <span class="pull-right">(50)</span>{{$item->name}}</a></li>
+                                  <li><a href="#"> <span class="pull-right">(50)</span>{{$item->name}}</a></li>
                                   @endforeach
 
 
@@ -57,11 +54,9 @@
 
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
-                    @php
-                        $features_products = DB::table('products')->get();
-                    @endphp
+
                     <h2 class="title text-center">Features Items</h2>
-                    @foreach ($features_products as $item)
+                    @foreach ($product_by_category as $item)
                     <div class="col-sm-4">
                         <div class="product-image-wrapper">
                             <div class="single-products">
@@ -82,7 +77,7 @@
                             <div class="choose">
                                 <ul class="nav nav-pills nav-justified">
                                     <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                <li><a href="{{url('/view_products')}}/{{$item->id}}"><i class="fa fa-eye"></i>View Product</a></li>
+                                    <li><a href="#"><i class="fa fa-eye"></i>View Product</a></li>
                                 </ul>
                             </div>
                         </div>
